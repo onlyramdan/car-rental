@@ -1,0 +1,44 @@
+<div>
+  <h2>Car Management</h2>
+
+  <h3>Add New Car</h3>
+  <form (submit)="addCar()">
+    <div>
+      <label for="brand">Brand:</label>
+      <input [(ngModel)]="newCar.brand" type="text" id="brand" required />
+    </div>
+    <div>
+      <label for="model">Model:</label>
+      <input [(ngModel)]="newCar.model" type="text" id="model" required />
+    </div>
+    <div>
+      <label for="plateNumber">Plate Number:</label>
+      <input
+        [(ngModel)]="newCar.plateNumber"
+        type="text"
+        id="plateNumber"
+        required
+      />
+    </div>
+    <div>
+      <label for="rentalPrice">Rental Price:</label>
+      <input
+        [(ngModel)]="newCar.rentalPrice"
+        type="number"
+        id="rentalPrice"
+        required
+      />
+    </div>
+    <button type="submit">Add Car</button>
+  </form>
+
+  <h3>Available Cars</h3>
+  <ul>
+    <li *ngFor="let car of cars">
+      {{ car.brand }} {{ car.model }} - {{ car.plateNumber }} - ${{
+        car.rentalPrice
+      }}
+      per day
+    </li>
+  </ul>
+</div>

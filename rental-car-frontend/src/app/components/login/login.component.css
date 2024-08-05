@@ -1,0 +1,48 @@
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Styles for form groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Styles for labels inside form groups */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold; /* Make label text bold */
+  color: #333; /* Darker text color for better readability */
+}
+
+/* Styles for input fields inside form groups */
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px; /* Increase font size for better readability */
+}
+
+/* Styles for the submit button */
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px; /* Increase padding for a more prominent button */
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px; /* Increase font size for better readability */
+  text-align: center; /* Center align text */
+}
+
+/* Hover effect for the submit button */
+.btn-primary:hover {
+  background-color: #0056b3;
+}

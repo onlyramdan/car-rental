@@ -1,0 +1,39 @@
+<div>
+  <h2>Rental Management</h2>
+
+  <h3>Add New Rental</h3>
+  <form (submit)="addRental()">
+    <div>
+      <label for="car">Select Car:</label>
+      <select [(ngModel)]="selectedCar" id="car" required>
+        <option value="0" disabled>Select a car</option>
+        <option *ngFor="let car of cars" [value]="car.id">
+          {{ car.brand }} {{ car.model }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label for="startDate">Start Date:</label>
+      <input
+        [(ngModel)]="rental.startDate"
+        type="date"
+        id="startDate"
+        required
+      />
+    </div>
+    <div>
+      <label for="endDate">End Date:</label>
+      <input [(ngModel)]="rental.endDate" type="date" id="endDate" required />
+    </div>
+    <button type="submit">Add Rental</button>
+  </form>
+
+  <h3>Active Rentals</h3>
+  <ul>
+    <li *ngFor="let rental of rentals">
+      {{ rental.car.brand }} {{ rental.car.model }} - {{ rental.startDate }} to
+      {{ rental.endDate }}
+      <button (click)="returnCar(rental.car.id)">Return Car</button>
+    </li>
+  </ul>
+</div>
