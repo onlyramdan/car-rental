@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { RouterModule } from '@angular/router'; // Import RouterModule
+import { showAlert } from '../../app.config';
 
 @Component({
   selector: 'app-register',
@@ -24,7 +25,7 @@ export class RegisterComponent {
 
   register() {
     if (this.password !== this.password_confirmation) {
-      alert('Passwords do not match!');
+      showAlert("'Passwords do not match!", 'error');
       return;
     }
 
@@ -41,10 +42,11 @@ export class RegisterComponent {
       .subscribe(
         (response: any) => {
           localStorage.setItem('token', response.token);
+          showAlert('Berhasil Mendaftar!', 'success');
           this.router.navigate(['/car-management']);
         },
         (error) => {
-          alert('Registration failed!');
+          showAlert('Gagal Mendaftar!');
         }
       );
   }

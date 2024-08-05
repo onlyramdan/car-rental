@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { RouterModule } from '@angular/router'; // Import RouterModule
+import { showAlert } from '../../app.config';
 
 @Component({
   selector: 'app-login',
@@ -23,11 +24,16 @@ export class LoginComponent {
       .subscribe(
         (response: any) => {
           localStorage.setItem('token', response.token);
+          showAlert(
+            'Login successful! Redirecting to car management...',
+            'success'
+          );
           this.router.navigate(['/car-management']);
         },
         (error) => {
-          alert('Login failed! Check your credentials and try again.');
-          console.error('Login error:', error);
+          showAlert(
+            'Login failed! Please check your credentials and try again.'
+          );
         }
       );
   }

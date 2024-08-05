@@ -1,17 +1,22 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
-import { AppComponent } from './app.component';
-import { appRoutes } from './app.routes';
-import { ApiService } from './services/api.service';
-import { AuthInterceptor } from './services/auth.interceptor';
-import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
 
-bootstrapApplication(AppComponent, {
-  providers: [
-    provideRouter(appRoutes),
-    provideHttpClient(withInterceptors([AuthInterceptor])),
-    ApiService,
-    FormsModule, // Ensure FormsModule is included here
-  ],
-}).catch((err) => console.error(err));
+// Konfigurasi default untuk SweetAlert2
+export const defaultSwalConfig = {
+  title: 'Oops...',
+  text: 'Something went wrong!',
+  icon: 'error',
+  confirmButtonText: 'OK',
+};
+
+// Helper function untuk menampilkan SweetAlert2 dengan konfigurasi default
+export function showAlert(
+  message: string,
+  type: 'success' | 'error' = 'error'
+) {
+  Swal.fire({
+    ...defaultSwalConfig,
+    title: type === 'success' ? 'Success!' : 'Error!',
+    text: message,
+    icon: type,
+  });
+}
