@@ -4,3 +4,8 @@
 .menu button {
   margin-left: 5px;
 }
+.toolbar {
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}

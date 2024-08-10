@@ -19,9 +19,9 @@ class User extends Authenticatable implements JWTSubject
         'name',
         'email',
         'password',
-        'address',               // Tambahkan kolom ini
-        'phone_number',          // Tambahkan kolom ini
-        'driver_license_number' // Tambahkan kolom ini
+        'address',               
+        'phone_number',          
+        'driver_license_number' 
     ];
 
     /**

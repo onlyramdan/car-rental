@@ -1,14 +1,21 @@
 <mat-card class="home-card">
   <mat-card-header>
     <mat-card-title>{{ title }}</mat-card-title>
+    <mat-card-subtitle>{{ subtitle }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>
-      Find your perfect rental car with us. Browse our selection and book your
-      ride today!
+      Discover our range of vehicles for your travel needs. Whether you are
+      looking for a compact car, a luxury vehicle, or something in between, we
+      have options for you.
     </p>
-    <button mat-raised-button color="primary" [routerLink]="'/cars'">
-      Browse Cars
-    </button>
+    <div class="button-container">
+      <button mat-raised-button color="primary" [routerLink]="'/cars'">
+        Browse Cars
+      </button>
+      <button mat-raised-button color="accent" [routerLink]="'/about'">
+        Learn More
+      </button>
+    </div>
   </mat-card-content>
 </mat-card>
