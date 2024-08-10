@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Rental Car</span>
+    <span class="spacer"></span>
+    <div class="menu">
+      <button mat-button [routerLink]="'/home'">Home</button>
+      <button mat-button [routerLink]="'/cars'">Cars</button>
+      <button mat-button [routerLink]="'/about'">About</button>
+      <button mat-flat-button [routerLink]="'/login'">Login</button>
+      <button mat-stroked-button (click)="logout()">Logout</button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

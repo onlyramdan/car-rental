@@ -1,1 +1,14 @@
-<button routerLink="/login">Login</button>
+<mat-card class="home-card">
+  <mat-card-header>
+    <mat-card-title>{{ title }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Find your perfect rental car with us. Browse our selection and book your
+      ride today!
+    </p>
+    <button mat-raised-button color="primary" [routerLink]="'/cars'">
+      Browse Cars
+    </button>
+  </mat-card-content>
+</mat-card>

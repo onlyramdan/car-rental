@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterModule, Route } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import {
+  MatCard,
+  MatCardContent,
+  MatCardHeader,
+  MatCardTitle,
+} from '@angular/material/card';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, MatCard, MatCardContent, MatCardHeader, MatCardTitle],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  styleUrls: ['./home.component.css'],
 })
-export class HomeComponent {}
+export class HomeComponent {
+  title = 'Welcome to Rental Car';
+}
